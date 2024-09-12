@@ -1,0 +1,23 @@
+{% extends 'inventory/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h3>{{ menuitem }}</h3>    
+    <table style="margin:0px auto; width: 40%">
+        <tr>
+        <th>Ingredient</th><th>Qty</th><th>Total Left</th><th>{{menu_item}}</th>
+        </tr>
+        {% for item in object_list %}
+            <tr>
+            <td>{{item.ingredient.name}}</td><td>{{item.amount_used}}</td><td>{{item.ingredient.total_quantity}}</td>
+            <td><a href="{% url 'recipe_item_update' item.menu_item item.id %}"><button class="Edit">Edit</button></a></td>
+            <td><a href="{% url 'recipe_item_delete' item.menu_item item.id %}"><button class ="Delete">Delete</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'recipe_update' menuitem %}"><button class='Submit'>Add an Item</button></a>
+{% endblock %}

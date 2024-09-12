@@ -1,0 +1,26 @@
+{% extends 'inventory/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h3>Current Ingredients</h3>
+    <table style="margin:0px auto; width: 40%">
+        <tr>
+        <th>Name</th><th>Price</th><th>Qty</th><th>Unit</th><th>Value</th>
+        </tr>
+        {% for ingred in object_list %}
+            <tr class="Ingredient">
+            <td>{{ingred.name}}</td><td>${{ingred.unit_price}}</td><td>{{ingred.total_quantity}}</td>
+            <td>{{ingred.unit_of_measure}}</td><td>${{ingred.value}}</td>
+            <td><a href="{% url 'ingredient_update' ingred.id %}"><button class="Edit">Edit</button></a></td>
+            <td><a href="{% url 'ingredient_delete' ingred.id %}"><button class='Delete'>Delete</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p>Total : ${{total_value}}</p>
+    <a href="{% url 'ingredient_create' %}"><button class="Submit">Add a New Ingredient</button></a>
+{% endblock %}
+

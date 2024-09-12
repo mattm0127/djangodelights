@@ -1,0 +1,18 @@
+{% extends 'inventory/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <table style="margin:0px auto; width: 40%">
+        <tr><th>Item</th><th>Transaction Date</th><th>Price</th><th>Cost</th><th>Profit</th></tr>
+        {% for purchase in object_list %}
+        <tr><td>{{purchase.menu_item}}</td><td>{{purchase.date}}</td><td>${{purchase.price}}</td>
+        <td>${{purchase.cost}}</td><td>${{purchase.profit}}</td></tr>
+        {% endfor %}
+    </table>
+    <p>Revenue : ${{total_revenue}} | Cost : ${{total_cost}} | Profit : ${{total_profit}}</p>
+    <a href="{% url 'purchase_create' %}"><button class="Submit">Create Transaction</button></a>
+{% endblock %}

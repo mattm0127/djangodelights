@@ -1,0 +1,20 @@
+{% extends "inventory/base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'inventory/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <p>
+    {% if user.username %}
+        <h1>Welcome {{user.username}}</h1>
+    {% else %}
+        <h1 class="Home">
+            Please 
+            <a href="{% url 'login' %}"><button class="Login">Login</button></a>
+                To Access Your Stuff
+        </h1>
+    {% endif %}
+    </p>
+{% endblock %}

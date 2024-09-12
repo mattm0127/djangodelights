@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        header {color: orchid; }
+        body {text-align: center; margin-top:50px}
+    </style>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>   
+        <h1>Track Stuff!</h1>
+        <p>
+            {% if user.username %}
+                <a href="{% url 'ingredient_list' %}">Ingredient Inventory</a> - 
+                <a href="{% url 'menu_list' %}">Menu Items</a> - 
+                <a href="{% url 'purchase_list' %}">Transactions</a> - 
+                <a href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a> -
+                <a href="{% url 'signup' %}">Register</a>
+            {% endif %}
+        </p>
+    </header>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

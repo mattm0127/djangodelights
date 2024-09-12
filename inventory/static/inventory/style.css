@@ -1,0 +1,81 @@
+h1[class='Home'] {
+    color: orange;
+    }
+
+input[class='Submit'] {
+    background-color: plum; 
+    text-align: center; 
+    padding: 5px 10px; 
+    font-size: 15px; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer
+    }
+    
+input[class='Delete'] {
+    background-color: mediumaquamarine; 
+    text-align: center; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    padding: 3px 10px; 
+    font-size: 15px;
+    }
+
+button[class="Login"] {
+    background-color: mediumaquamarine; 
+    text-align: center; 
+    padding: 10px 30px; 
+    font-size: 18px; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer
+    }
+
+button[class='Submit'] {
+    background-color: plum; 
+    text-align: center; 
+    padding: 5px 10px; 
+    font-size: 15px; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer
+    }
+
+button[class='Cancel'] {
+    background-color: bisque; 
+    text-align: center; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    padding: 3px 10px; 
+    font-size: 15px;
+    }
+
+button[class='Edit'] {
+    background-color: bisque; 
+    text-align: center; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    padding: 3px 10px; 
+    font-size: 15px;
+    }
+
+button[class='Delete'] {
+    background-color: mediumaquamarine; 
+    text-align: center; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    padding: 3px 10px; 
+    font-size: 15px;
+    }
+    
+tr:nth-child(even)[class='Ingredient'] {
+    background-color: #eee;
+    }
+
+tr:nth-child(odd)[class='Ingredient'] {
+    background-color: #fff;
+    }  
