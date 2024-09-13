@@ -27,6 +27,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+# Allows CSRF actions from host
+CSRF_TRUSTED_ORIGINS = [
+    'https://darling-swift-calm.ngrok-free.app',
+    'https://inv.macorapp.net' 
+]
 
 # Application definition
 
@@ -117,7 +122,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-
+STATIC_ROOT = BASE_DIR / 'static' # Allows Debug = False while still serving static files
 STATIC_URL = 'static/'
 # Redirect the user after login and logout
 LOGIN_URL= '/account/login' # Must set this for mixins and decorators to work properly
@@ -126,7 +131,6 @@ LOGOUT_REDIRECT_URL = '/' # will redirect users to home from logout view (Logout
 
 # Clear the session after a user closes the browser window.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
 
 
 # Default primary key field type
