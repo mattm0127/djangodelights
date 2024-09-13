@@ -1,5 +1,7 @@
 <h1>This project was to create a website that can track inventory and perform transactions using Django.</h1>
 
+<p><h2>To log on and play with the website, click <a href='https://inv.macorapp.net/'>inv.macorapp.net</a> and create a username!</h2></p>
+
 <div align='center'>
   <h3>Logging into the site or registering</h3>
   <image width='49%' src="https://github.com/user-attachments/assets/89a30e7c-a7dc-4fc3-98ef-db58ae529066"> 
